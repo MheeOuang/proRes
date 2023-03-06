@@ -1,0 +1,20 @@
+<mat-toolbar class="app-bar">
+  <img
+    class="img-logo"
+    src="https://cdn-icons-png.flaticon.com/512/3183/3183463.png"
+    alt="icon"
+  />
+  <span class="font-logo">ตามสั่งตามใจ</span>
+  <span class="space"></span>
+  <div class="font-menu">
+    <button mat-button>หน้าแรก</button>
+    <button mat-button [matMenuTriggerFor]="menu">เมนู</button>
+    <mat-menu #menu="matMenu">
+      <button class="font-menu" mat-menu-item>จานเดียว</button>
+      <button class="font-menu" mat-menu-item>กับข้าว</button>
+      <button class="font-menu" mat-menu-item>ทานเล่น</button>
+      <button class="font-menu" mat-menu-item>ของหวาน</button>
+    </mat-menu>
+    <button mat-button>ติดต่อ</button>
+  </div>
+</mat-toolbar>
