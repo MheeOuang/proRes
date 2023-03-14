@@ -31,13 +31,8 @@
   flex: 1 1 auto;
 }
 
-.img-list-menu{
-  border-radius: 20px;
-  border-color: black;
-  margin-top: 20px;
-  width: 250px;
-  height: 250px;
-  transition: 1s ease;
+.font-menu2{
+  font-family: 'Mitr', sans-serif;
 }
 
 .img-logo{
@@ -45,24 +40,53 @@
   height: 50px;
 }
 
-.img-trolley{
-  width: 32px;
-  height: 32px;
+.img-cover{
+  margin-top: 10px;
+  width: max-content;
+  height: 15%;
+  border-radius: 10px;
+  filter: brightness(0.5);
 }
 
-.overlay{
+.font-cover{
   position: absolute;
-  top: 20px;
-  left: 35%;
-  width: 30%;
-  height: 100%;
-  color: #050505;
-  opacity: 0;
-  transition: opacity 0.5s;
+  top: 25%;
+  color: rgb(249, 181, 55) ;
+  font-family: 'Pattaya', sans-serif;
+  font-size: 100px;
+
 }
 
-.overlay:hover{
-  opacity: 1;
+.img-menu{
+  width: 200px;
+  height: 150px;
+  border-radius: 10px;
+  transition: 1s ease;
+}
+
+.img-menu:hover{
+  transform: scale(1.1);
+  transition: 1s ease;
+}
+
+.button-size{
+  margin: 20px;
+  width: 200px;
+  height: 150px;
+}
+.img-show{
+  width: 500px;
+  height: 400px;
+  border-radius: 10px;
 }
 
 
+.example-card {
+  max-width: 700px;
+}
+
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
