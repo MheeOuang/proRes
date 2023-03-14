@@ -16,6 +16,7 @@ export class MainComponent {
   SelectFood : any;
   showtype = "";
   sum = 0;
+  count = 0;
   showbytype : any;
   type : any;
   constructor(private dataService : DataService,private http : HttpClient){
@@ -37,12 +38,12 @@ export class MainComponent {
     }
   }
   plus(){
-    this.sum = this.sum+1;
+    this.count = this.count+1;
   }
   delete(){
-    this.sum = this.sum-1;
-    if(this.sum < 0 ){
-      this.sum = 0;
+    this.count = this.count-1;
+    if(this.count < 0 ){
+      this.count = 0;
     }
   }
 

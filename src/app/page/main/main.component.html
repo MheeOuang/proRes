@@ -10,7 +10,7 @@
       </div>
       <div class="col-12" style="margin: 20px">
         <mat-toolbar
-          style="display: flex; flex-direction: row; justify-content: center;background-color: white;"
+          style="display: flex; flex-direction: row; justify-content: start;background-color: white;"
           >
           <span class="font-menu2">เลือกประเภทอาหาร</span>
           <button mat-button color="warn" class="font-menu2" *ngFor="let type of this.foodtypes" (click)="SearchType(type.name)">
@@ -60,7 +60,7 @@
               font-size: 50px;
               margin-top: 20px;
             "
-            >{{ this.sum }}</span
+            >{{ this.count }}</span
           >
           <span
             #num
