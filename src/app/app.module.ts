@@ -14,12 +14,15 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './page/header/header.component';
 import { MainComponent } from './page/main/main.component';
+import { OrderComponent } from './page/order/order.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    MainComponent
+    MainComponent,
+    OrderComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
