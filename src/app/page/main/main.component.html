@@ -12,8 +12,8 @@
         <mat-toolbar
           style="display: flex; flex-direction: row; justify-content: start;background-color: white;"
           >
-          <span class="font-menu2">เลือกประเภทอาหาร</span>
-          <button mat-button color="warn" class="font-menu2" *ngFor="let type of this.foodtypes" (click)="SearchType(type.name)">
+          <span class="font-menu2">เลือกประเภทอาหาร : </span>
+          <button mat-button color="warn" class="font-menu2" *ngFor="let type of this.foodtypes" (click)="SearchType(type.tid)">
             {{ this.type.name }}
           </button></mat-toolbar
         >

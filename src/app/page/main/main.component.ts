@@ -18,17 +18,15 @@ export class MainComponent {
   sum = 0;
   count = 0;
   showbytype : any;
-  type : any;
+  type = Array<any>();
   constructor(private dataService : DataService,private http : HttpClient){
     this.showtype = "ทั้งหมด";
-    console.log("start");
     this.http.get(dataService.apiEnpoint+'/food').subscribe((data:any)=>{
       this.foods = FoodCvk.toFood(JSON.stringify(data));
-      console.log(this.foods);
     });
     this.http.get(dataService.apiEnpoint+'/foodtype').subscribe((data:any)=>{
       this.foodtypes = FoodtypeCvk.toFoodtype(JSON.stringify(data));
-      console.log(this.foodtypes);
+
     });
   }
   show(Id:any){
@@ -48,23 +46,13 @@ export class MainComponent {
     }
   }
 
-  SearchType(type: string){
+  SearchType(type : any){
     this.showtype = "ทั้งหมด";
-    this.http.get(this.dataService.apiEnpoint + '/food/foodtype/' + type).subscribe((data: any)=>{
-      this.foods = FoodCvk.toFood(JSON.stringify(data));
-      console.log(this.foods);
+    this.http.get(this.dataService.apiEnpoint + '/food/tid/' + type).subscribe((data: any)=>{
+      this.type = FoodCvk.toFood(JSON.stringify(data));
+      this.foods = this.type;
+      console.log(this.type);
     });
-
   }
-  // SearchType(name:any){
-  //   this.showtype = "showtype";
-  //   this.Searchtype = new Array<any>();
-  //   this.foodtypes.forEach(elment =>{
-  //     if(elment.name == name){
-  //       this.Searchtype.push(elment);
-  //     }
-  //   });
-  //   this.type = this.Searchtype[0];
-  //   console.log(this.type);
-  // }
+
 }
