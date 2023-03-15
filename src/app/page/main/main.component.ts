@@ -14,12 +14,13 @@ export class MainComponent {
   foodtypes = Array<Foodtype>();
   Searchtype = new Array<any>();
   SelectFood : any;
-  showtype = "";
+  showtype = "ทั้งหมด";
   sum = 0;
   count = 0;
   showbytype : any;
   type : any;
   constructor(private dataService : DataService,private http : HttpClient){
+    this.showtype = "ทั้งหมด";
     console.log("start");
     this.http.get(dataService.apiEnpoint+'/food').subscribe((data:any)=>{
       this.foods = FoodCvk.toFood(JSON.stringify(data));
@@ -47,15 +48,23 @@ export class MainComponent {
     }
   }
 
-  SearchType(name:any){
-    this.showtype = "showtype";
-    this.Searchtype = new Array<any>();
-    this.foodtypes.forEach(elment =>{
-      if(elment.name == name){
-        this.Searchtype.push(elment);
-      }
+  SearchType(type: string){
+    this.showtype = "ทั้งหมด";
+    this.http.get(this.dataService.apiEnpoint + '/food/foodtype/' + type).subscribe((data: any)=>{
+      this.foods = FoodCvk.toFood(JSON.stringify(data));
+      console.log(this.foods);
     });
-    this.type = this.Searchtype[0];
-    console.log(this.type);
+
   }
+  // SearchType(name:any){
+  //   this.showtype = "showtype";
+  //   this.Searchtype = new Array<any>();
+  //   this.foodtypes.forEach(elment =>{
+  //     if(elment.name == name){
+  //       this.Searchtype.push(elment);
+  //     }
+  //   });
+  //   this.type = this.Searchtype[0];
+  //   console.log(this.type);
+  // }
 }

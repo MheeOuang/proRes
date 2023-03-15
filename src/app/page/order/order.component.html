@@ -1,0 +1,19 @@
+<div *ngFor="let order of this.orders">
+  <mat-card class="order_card">
+    <div class="order_info">
+      <span>Order: {{order.orderID}}</span>
+      <span>Customer: {{order.cusName}}</span>
+      <div style="display: flex;flex-direction: row;">
+        <div style="display: flex;flex-direction: column;width: 300px;">
+          <span>Menu</span>
+          <span>{{order.foodName}}</span>
+        </div>
+        <div style="display: flex;flex-direction: column;width: 300px;">
+          <span>Amount</span>
+          <span>{{order.amount}}</span>
+        </div>
+      </div>
+      <button class="bt-order" mat-raised-button color="warn"><span style="font-size: 15px;">{{order.status}}</span></button>
+    </div>
+  </mat-card>
+</div>
