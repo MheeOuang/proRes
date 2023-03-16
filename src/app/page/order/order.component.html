@@ -51,17 +51,30 @@
         </span>
 
         <div class="row" *ngFor="let foodOrder of this.foodOrders">
-          <div class="col-8">
+          <div class="col-6">
             <span>
               <p class="font-menu2">{{foodOrder.name}}</p>
             </span>
           </div>
-          <div class="col-3">
+          <div class="col-2">
             <span>
               <p class="font-menu2">{{foodOrder.amount}}</p>
             </span>
           </div>
+          <div class="col-2">
+            <span>
+              <p class="font-menu2">{{foodOrder.price}}</p>
+            </span>
+          </div>
+          <div class="col-2">
+            <span>
+              <p class="font-menu2">ราคารวม</p>
+            </span>
+          </div>
         </div>
+        <span>
+          <p class="font-menu2">รวมทั้งสิ้น  บาท</p>
+        </span>
       </div>
 
     </div>

@@ -12,6 +12,7 @@ import { Convert as FoodOrderCvt, FoodOrder} from 'src/app/model/foodOrder';
 export class OrderComponent {
   orders = Array<Order>();
   foodOrders = Array<FoodOrder>();
+  sumPrice = 0;
   constructor(private dataService: DataService,private http: HttpClient){
     http.get(dataService.apiEnpoint + '/order').subscribe((data: any)=>{
       this.orders = orderCvt.toOrder(JSON.stringify(data));
@@ -26,5 +27,6 @@ export class OrderComponent {
       this.foodOrders = FoodOrderCvt.toFoodOrder(JSON.stringify(data));
       console.log(this.foodOrders);
     });
+
   }
 }
