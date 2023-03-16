@@ -9,6 +9,7 @@ export interface FoodOrder {
   name:   string;
   price:  number;
   amount: number;
+  sumPrice: number;
 }
 
 // Converts JSON strings to/from your types
