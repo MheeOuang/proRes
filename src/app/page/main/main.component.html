@@ -12,10 +12,13 @@
         <mat-toolbar
           style="display: flex; flex-direction: row; justify-content: start;background-color: white;"
           >
-          <span class="font-menu2">เลือกประเภทอาหาร : </span>
+          <span class="font-menu2" style="margin-left: 15px;">เลือกประเภทอาหาร : </span>
           <button mat-button color="warn" class="font-menu2" *ngFor="let type of this.foodtypes" (click)="SearchType(type.tid)">
             {{ this.type.name }}
-          </button></mat-toolbar
+          </button>
+          <button mat-button color="warn" class="font-menu2" style="margin-left: 10px;">แสดงเมนูทั้งหมด</button>
+          <button mat-button><img class="img-trolley"  src="https://cdn-icons-png.flaticon.com/512/2838/2838895.png" ></button>
+          </mat-toolbar
         >
         <!-- *ngIf="this.isMultiple == 'show-one'" -->
         <button
@@ -79,7 +82,7 @@
             color="accent"
             class="font-menu2"
             style="width: 100%"
-            (click)="addToCart(this.foods.fid)"
+            (click)="addToCart(this.SelectFood.fid)"
           >
             เพิ่มลงในตะกร้า
           </button>
