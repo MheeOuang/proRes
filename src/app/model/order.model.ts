@@ -1,9 +1,8 @@
 export interface Order {
-  orderID:  number;
+  oid:  number;
   cusName:  string;
-  foodName: string;
-  amount:   number;
   status:   string;
+  address:  string;
 }
 
 // Converts JSON strings to/from your types
