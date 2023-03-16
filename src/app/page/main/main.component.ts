@@ -55,4 +55,7 @@ export class MainComponent {
     });
   }
 
+  addToCart(){
+    
+  }
 }
