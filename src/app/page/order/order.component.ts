@@ -28,6 +28,9 @@ export class OrderComponent {
     this.Total = 0;
     this.http.get(this.dataService.apiEnpoint+'/order/info/' + oid).subscribe((data:any)=>{
       this.foodOrders = FoodOrderCvt.toFoodOrder(JSON.stringify(data));
+      for(let i = 0 ; i<this.foodOrders.length;i++){
+        this.Total = this.Total +(this.foodOrders[i].amount * this.foodOrders[i].price);
+      }
     });
 
 
