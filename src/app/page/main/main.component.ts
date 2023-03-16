@@ -16,6 +16,7 @@ export class MainComponent {
   SelectFood : any;
   showtype = "ทั้งหมด";
   sum = 0;
+  countCart = 0;
   count = 0;
   showbytype : any;
   type = Array<any>();
@@ -55,4 +56,7 @@ export class MainComponent {
     });
   }
 
+  addToCart(Id:any){
+    
+  }
 }
