@@ -1,5 +1,5 @@
 <div class="container" style="margin-left:50px; font-family: 'Mitr', sans-serif;">
-  <div class="row" >
+  <div class="row">
     <div class="col-6">
 
       <mat-card style="margin-top: 20px; background-color:rgb(249, 181, 55) ;">
@@ -49,37 +49,61 @@
         <span>
           <h4 class="font-menu2">รายละเอียด</h4>
         </span>
-
-        <div class="row" *ngFor="let foodOrder of this.foodOrders">
+        <!-- head -->
+        <div class="row">
           <div class="col-6">
             <span>
-              <p class="font-menu2">{{foodOrder.name}}</p>
+              <p class="font-menu2">รายการอาหาร</p>
             </span>
           </div>
           <div class="col-2">
             <span>
-              <p class="font-menu2">{{foodOrder.amount}}</p>
+              <p class="font-menu2">จำนวน</p>
             </span>
           </div>
           <div class="col-2">
             <span>
-              <p class="font-menu2">{{foodOrder.price}}</p>
+              <p class="font-menu2">ราคา</p>
             </span>
           </div>
           <div class="col-2">
             <span>
-              <p class="font-menu2">{{foodOrder.sumPrice}}</p>
+              <p class="font-menu2">ราคารวม</p>
             </span>
           </div>
         </div>
-        <span>
-          <p class="font-menu2">รวมทั้งสิ้น  บาท</p>
-        </span>
       </div>
-
+      <!-- show data -->
+      <div class="row" *ngFor="let foodOrder of this.foodOrders">
+        <div class="col-6">
+          <span>
+            <p class="font-menu2">{{foodOrder.name}}</p>
+          </span>
+        </div>
+        <div class="col-2">
+          <span>
+            <p class="font-menu2">{{foodOrder.amount}}</p>
+          </span>
+        </div>
+        <div class="col-2">
+          <span>
+            <p class="font-menu2">{{foodOrder.price}}</p>
+          </span>
+        </div>
+        <div class="col-2">
+          <span>
+            <p class="font-menu2">{{foodOrder.sumPrice}}</p>
+          </span>
+        </div>
+      </div>
+      <span>
+        <p class="font-menu2">รวมทั้งสิ้น บาท</p>
+      </span>
     </div>
+
   </div>
 </div>
+
 
 
 
