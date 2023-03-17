@@ -52,11 +52,18 @@ export class MainComponent {
     this.http.get(this.dataService.apiEnpoint + '/food/tid/' + type).subscribe((data: any)=>{
       this.type = FoodCvk.toFood(JSON.stringify(data));
       this.foods = this.type;
+    });
+  }
+
+  TypeAll(){
+    this.http.get(this.dataService.apiEnpoint + '/food').subscribe((data:any)=>{
+      this.type = FoodCvk.toFood(JSON.stringify(data));
       console.log(this.type);
+      this.foods = this.type;
     });
   }
 
   addToCart(Id:any){
-    
+
   }
 }

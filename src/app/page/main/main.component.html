@@ -16,7 +16,7 @@
           <button mat-button color="warn" class="font-menu2" *ngFor="let type of this.foodtypes" (click)="SearchType(type.tid)">
             {{ this.type.name }}
           </button>
-          <button mat-button color="warn" class="font-menu2" style="margin-left: 10px;">แสดงเมนูทั้งหมด</button>
+          <button mat-button color="warn" class="font-menu2" style="margin-left: 10px;" (click)="TypeAll()">แสดงเมนูทั้งหมด</button>
           <button mat-button><img class="img-trolley"  src="https://cdn-icons-png.flaticon.com/512/2838/2838895.png" ></button>
           </mat-toolbar
         >
