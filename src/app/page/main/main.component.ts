@@ -64,6 +64,6 @@ export class MainComponent {
   }
 
   addToCart(Id:any){
-
+    console.log(Id);
   }
 }

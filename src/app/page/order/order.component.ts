@@ -14,6 +14,7 @@ export class OrderComponent {
   foodOrders = Array<FoodOrder>();
   Total = 0;
   sumPrice = Array();
+  router: any;
   constructor(private dataService: DataService,private http: HttpClient){
     http.get(dataService.apiEnpoint + '/order').subscribe((data: any)=>{
       this.orders = orderCvt.toOrder(JSON.stringify(data));
@@ -32,7 +33,5 @@ export class OrderComponent {
         this.Total = this.Total +(this.foodOrders[i].amount * this.foodOrders[i].price);
       }
     });
-
-
   }
 }
