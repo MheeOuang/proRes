@@ -5,7 +5,7 @@ import { OrderComponent } from './page/order/order.component';
 import { LoginComponent } from './page/login/login.component';
 
 const routes: Routes = [
-  {path:'',component:LoginComponent},
+  {path:'',component:MainComponent},
   {path:'main',component:MainComponent},
   {path:'order',component:OrderComponent}
 
