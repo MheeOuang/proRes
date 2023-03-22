@@ -22,7 +22,6 @@ export class BasketComponent {
     })
   }
   removeItem(Item:any){
-    console.log(Item);
     this.cartService.removeItem(Item);
   }
 }
