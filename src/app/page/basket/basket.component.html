@@ -4,36 +4,51 @@
 
       <mat-card style="margin-top: 20px; background-color:rgb(249, 181, 55) ;">
         <div class="row" style="margin-top: 5px;margin-bottom: 5px;">
-          <div class="col-2" style="text-align: center;">
+          <div class="col-1" style="text-align: center;">
             <span>ลำดับ</span>
           </div>
-          <div class="col-5">
+          <div class="col-3">
             <span>ชื่ออาหาร</span>
           </div>
           <div class="col-2">
             <span>ราคา</span>
           </div>
-          <div class="col-3">
+          <div class="col-1">
+            <span>จำนวน</span>
+          </div>
+          <div class="col-5">
             <span>สถานะ</span>
           </div>
         </div>
       </mat-card>
-
+      <div *ngFor="let item of food;let i = index">
       <mat-card style="margin-top: 10px;">
         <div class="row" style="margin-top: 10px;margin-bottom: 10px;">
-          <div class="col-2" style="text-align: center;">
-            <span></span>
-          </div>
-          <div class="col-5">
-            <span></span>
-          </div>
-          <div class="col-2">
-            <span></span>
+          <div class="col-1" style="text-align: center;">
+            <span>{{i+1}}</span>
           </div>
           <div class="col-3">
-            <span></span>
+            <span>{{item.name}}</span>
+          </div>
+          <div class="col-2">
+            <span>{{item.price}}</span>
+          </div>
+          <div class="col-1">
+            {{this.count}}
+          </div>
+          <div class="col-3">
+            <span>ยังไม่ส่ง</span>
+          </div>
+          <div class="col-1">
+            <span>แก้ไข</span>
+          </div>
+          <div class="col-1">
+            <button mat-button color="warn" (click)="removeItem(item)">ลบ</button>
           </div>
         </div>
       </mat-card>
-      <span><button mat-button color="warn" routerLink="/main">กลับ</button></span>
     </div>
+    <mat-card style="margin-top: 10px;display: flex;justify-content: row;">
+    <span><button mat-button color="warn" routerLink="/main">กลับ</button><span style="float: right;">{{this.getTotal * this.count}} บาท</span></span>
+    </mat-card>
+
