@@ -63,7 +63,8 @@ export class MainComponent {
     });
   }
 
-  addToCart(Id:any){
-    console.log(Id);
+  addToCart(fid:any){
+    console.log(fid,this.count);
+
   }
 }

@@ -16,6 +16,7 @@ import { HeaderComponent } from './page/header/header.component';
 import { MainComponent } from './page/main/main.component';
 import { OrderComponent } from './page/order/order.component';
 import { LoginComponent } from './page/login/login.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { LoginComponent } from './page/login/login.component';
     BrowserAnimationsModule,
     HttpClientModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
