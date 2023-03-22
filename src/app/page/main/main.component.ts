@@ -58,12 +58,14 @@ export class MainComponent {
   TypeAll(){
     this.http.get(this.dataService.apiEnpoint + '/food').subscribe((data:any)=>{
       this.type = FoodCvk.toFood(JSON.stringify(data));
-      console.log(this.type);
       this.foods = this.type;
     });
   }
 
-  addToCart(Id:any){
-    console.log(Id);
+  addToCart(){
+    this.dataService.basket.idx = this.SelectFood.fid;
+    this.dataService.basket.name = this.SelectFood.name;
+    this.dataService.basket.price = this.SelectFood.price;
+    this.dataService.basket.count = this.count;
   }
 }
