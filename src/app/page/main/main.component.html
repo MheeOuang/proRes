@@ -41,7 +41,7 @@
           >
             แสดงเมนูทั้งหมด
           </button>
-          <button mat-button>
+          <button mat-button routerLink="/basket">
             <img
               class="img-trolley"
               src="https://cdn-icons-png.flaticon.com/512/2838/2838895.png"
@@ -112,7 +112,7 @@
               color="accent"
               class="font-menu2"
               style="width: 100%"
-              (click)="addToCart(this.SelectFood.fid)"
+              (click)="addToCart()"
             >
               เพิ่มลงในตะกร้า
             </button>
