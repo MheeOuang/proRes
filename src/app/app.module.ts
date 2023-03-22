@@ -16,6 +16,7 @@ import { HeaderComponent } from './page/header/header.component';
 import { MainComponent } from './page/main/main.component';
 import { OrderComponent } from './page/order/order.component';
 import { LoginComponent } from './page/login/login.component';
+import { BasketComponent } from './page/basket/basket.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LoginComponent } from './page/login/login.component';
     MainComponent,
     OrderComponent,
     OrderComponent,
-    LoginComponent
+    LoginComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,
