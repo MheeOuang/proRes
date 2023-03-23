@@ -15,8 +15,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './page/header/header.component';
 import { MainComponent } from './page/main/main.component';
 import { OrderComponent } from './page/order/order.component';
-import { LoginComponent } from './page/login/login.component';
 import { BasketComponent } from './page/basket/basket.component';
+import { LoginCusComponent } from './page/login-cus/login-cus.component';
+import { LoginOwnerComponent } from './page/login-owner/login-owner.component';
+import { CreateUserComponent } from './page/create-user/create-user.component';
+import { FirstComponent } from './page/first/first.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +28,11 @@ import { BasketComponent } from './page/basket/basket.component';
     MainComponent,
     OrderComponent,
     OrderComponent,
-    LoginComponent,
-    BasketComponent
+    BasketComponent,
+    LoginCusComponent,
+    LoginOwnerComponent,
+    CreateUserComponent,
+    FirstComponent
   ],
   imports: [
     BrowserModule,
