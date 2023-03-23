@@ -15,8 +15,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './page/header/header.component';
 import { MainComponent } from './page/main/main.component';
 import { OrderComponent } from './page/order/order.component';
+<<<<<<< Updated upstream
 import { LoginComponent } from './page/login/login.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
+=======
+import { BasketComponent } from './page/basket/basket.component';
+import { FirstComponent } from './page/first/first.component';
+import { LoginOwnerComponent } from './page/login-owner/login-owner.component';
+import { LoginCusComponent } from './page/login-cus/login-cus.component';
+import { CreateUserComponent } from './page/create-user/create-user.component';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -25,7 +33,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MainComponent,
     OrderComponent,
     OrderComponent,
+<<<<<<< Updated upstream
     LoginComponent
+=======
+    BasketComponent,
+    FirstComponent,
+    LoginOwnerComponent,
+    LoginCusComponent,
+    CreateUserComponent
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,

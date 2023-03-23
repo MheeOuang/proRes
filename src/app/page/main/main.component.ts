@@ -63,8 +63,15 @@ export class MainComponent {
     });
   }
 
+<<<<<<< Updated upstream
   addToCart(fid:any){
     console.log(fid,this.count);
 
+=======
+  addToCart(){
+    //save to data service
+    // this.dataService.basket.count = this.count;
+    this.dataService.basket = this.SelectFood;
+>>>>>>> Stashed changes
   }
 }
