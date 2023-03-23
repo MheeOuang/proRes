@@ -47,7 +47,7 @@
 }
 
 .img-cover{
-  margin-top: 10px;
+  object-fit: cover;
   width: 1500px;
   height: 400px;
   filter: brightness(0.5);
@@ -67,6 +67,7 @@
   height: 150px;
   border-radius: 10px;
   transition: 1s ease;
+  object-fit: cover;
 }
 
 .img-menu:hover{
