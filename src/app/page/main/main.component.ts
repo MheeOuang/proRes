@@ -70,7 +70,7 @@ export class MainComponent {
       basket.amount = this.count;
       // this.food = this.cart.cartItem.filter((food:any)=>food.fid == basket.fid);
       // if(this.food.length == 1){
-      //   basket.amount += this.count;
+      //   basket.amount += this.count+;
       // }
       this.cart.addtoCart(basket);
     }
