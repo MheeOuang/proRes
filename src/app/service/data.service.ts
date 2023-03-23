@@ -11,6 +11,9 @@ export class DataService {
 class basket{
   idx = 0;
   name = "";
-  price = 0;
+  detail = "";
+  img = "";
+  price =0;
+  tid = 0;
   count = 0;
 }

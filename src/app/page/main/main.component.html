@@ -9,7 +9,14 @@
         <span class="font-cover">ตามสั่งตามใจ</span>
       </div>
     </div>
-    <div style="display: flex; flex-direction: row; justify-content: center;margin: 1px;">
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 1px;
+      "
+    >
       <div class="col-6" style="margin: 20px">
         <mat-toolbar
           style="
@@ -41,11 +48,15 @@
           >
             แสดงเมนูทั้งหมด
           </button>
-          <button mat-button routerLink="/basket">
-            <img
+
+          <button style="margin-left: 10px;" routerLink="/basket" class="btn btn-basic">
+            <i style="font-size: 30px" class="fas fa-cart-plus">
+              <img
               class="img-trolley"
               src="https://cdn-icons-png.flaticon.com/512/2838/2838895.png"
             />
+            </i>
+            <div style="font-size: 10px" class="badge bg-primary">{{this.totalItem}}</div>
           </button>
         </mat-toolbar>
         <!-- *ngIf="this.isMultiple == 'show-one'" -->
@@ -112,7 +123,7 @@
               color="accent"
               class="font-menu2"
               style="width: 100%"
-              (click)="addToCart()"
+              (click)="addToCart(this.SelectFood, this.count)"
             >
               เพิ่มลงในตะกร้า
             </button>
