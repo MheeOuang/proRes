@@ -20,6 +20,7 @@ export class MainComponent {
   showbytype : any;
   totalItem = 0;
   type = Array<any>();
+  food:any;
   constructor(private cart : CartService,private dataService : DataService,private http : HttpClient){
     this.showtype = "ทั้งหมด";
     this.http.get(dataService.apiEnpoint+'/food').subscribe((data:any)=>{
@@ -66,11 +67,14 @@ export class MainComponent {
   }
   addToCart(basket:any,count:any){
     if(count>0){
-      this.cart.countItem.count = this.count;
+      basket.amount = this.count;
+      // this.food = this.cart.cartItem.filter((food:any)=>food.fid == basket.fid);
+      // if(this.food.length == 1){
+      //   basket.amount += this.count;
+      // }
       this.cart.addtoCart(basket);
     }
     else{
-      
     }
   }
 }

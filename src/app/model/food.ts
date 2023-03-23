@@ -11,6 +11,7 @@ export interface Food {
   img:    string;
   detail: string;
   tid:    number;
+  amount: number;
 }
 
 // Converts JSON strings to/from your types

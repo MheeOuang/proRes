@@ -7,18 +7,13 @@ import { BehaviorSubject, count } from 'rxjs';
 export class CartService {
   public cartItem : any=[];
   public foodList = new BehaviorSubject<any>([]);
-  countItem = new countItem;
   constructor() {
   }
   getFoods(){
    return this.foodList.asObservable();
   }
-  setFood(food:any){
-    this.cartItem.push(...food);
-    this.foodList.next(food);
-  }
   addtoCart(food:any){
-    this.cartItem.push(food)
+    this.cartItem.push(food);
     this.foodList.next(this.cartItem);
   }
   getTotalPrice():number{
@@ -36,6 +31,4 @@ export class CartService {
     })
   }
 }
-class countItem{
-  count = 0;
-}
+
