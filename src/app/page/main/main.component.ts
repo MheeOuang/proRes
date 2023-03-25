@@ -5,6 +5,7 @@ import { Convert as FoodtypeCvk, Foodtype } from 'src/app/model/foodtype';
 import { Convert as FoodCvk, Food } from 'src/app/model/food';
 import { CartService } from 'src/app/service/cart.service';
 import { Convert as CusBasketCvt, CusBasket} from 'src/app/model/cusBasket';
+import { Convert as ConsistofCvt, Consistof} from 'src/app/model/consistof';
 
 @Component({
   selector: 'app-main',
@@ -22,7 +23,7 @@ export class MainComponent {
   totalItem = 0;
   type = Array<any>();
   food: any;
-
+  consistof = Array<Consistof>();
 
   constructor(private cart: CartService, private dataService: DataService, private http: HttpClient) {
     this.showtype = "ทั้งหมด";
@@ -76,21 +77,23 @@ export class MainComponent {
         amount: count
       }
       let jsonString = JSON.stringify(jsonObj);
-      let data : any = this.http.post(this.dataService.apiEnpoint + "/consistof/check", jsonString,
-        { observe: 'response' }).subscribe((response) => {});
-      console.log(data[0]);
+      this.http.post(this.dataService.apiEnpoint + '/consistof/check' ,jsonString).subscribe((data: any) => {
+        this.consistof = ConsistofCvt.toConsistof(JSON.stringify(data));
+        // console.log(data[0].amount);
+        if(data[0] == undefined) {
+          this.http.post(this.dataService.apiEnpoint + "/consistof/insert", jsonString,
+          { observe: 'response' }).subscribe((response) => {});
 
-      // if(data == undefined) {
-      //   this.http.post(this.dataService.apiEnpoint + "/consistof/insert", jsonString,
-      //   { observe: 'response' }).subscribe((response) => {});
+        }else{
+          count = data[0].amount + count;
+          jsonObj.amount = count;
+          let jsonString = JSON.stringify(jsonObj);
+          this.http.post(this.dataService.apiEnpoint + "/consistof/updateOldMenu", jsonString,
+          { observe: 'response' }).subscribe((response) => {});
+        }
+      });
 
-      // }else{
-      //   count = data[0].amount + count;
-      //   jsonObj.amount = count;
-      //   let jsonString = JSON.stringify(jsonObj);
-      //   this.http.post(this.dataService.apiEnpoint + "/consistof/updateOldMenu", jsonString,
-      //   { observe: 'response' }).subscribe((response) => {});
-      // }
+
 
 
 

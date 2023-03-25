@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { DataService } from 'src/app/service/data.service';
 import { Convert as CusBasketCvt, CusBasket} from 'src/app/model/cusBasket';
 import { Convert as FoodOrderCvt, FoodOrder} from 'src/app/model/foodOrder';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-basket2',
@@ -15,10 +16,11 @@ export class Basket2Component {
   total : any;
   oid : any;
   sumPrice = Array();
-  constructor(private dataService : DataService , private http: HttpClient){
+  constructor(private dataService : DataService , private http: HttpClient ,private router: Router){
     this.oid = this.dataService.oid;
     this.showOrder(this.oid);
   }
+
 
   showOrder(oid : any){
     this.total = 0;
@@ -34,6 +36,15 @@ export class Basket2Component {
 
   del(oid: any,fid : any){
     console.log(oid,fid);
+    let jsonObj = {
+      oid : oid,
+      fid : fid
+    }
+    let jsonString = JSON.stringify(jsonObj);
+    this.http.post(this.dataService.apiEnpoint + "/consistof/del", jsonString,
+      { observe: 'response' }).subscribe((response) => {});
+
+    // this.router.navigateByUrl('/basket2');
 
   }
 
