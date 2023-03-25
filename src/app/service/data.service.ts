@@ -6,14 +6,14 @@ import { Injectable } from '@angular/core';
 export class DataService {
   apiEnpoint = "http://localhost/Restaurant";
   basket = new basket;
+  customer : any;
+  oid : any;
+  CusBasket : any;
   constructor() { }
 }
 class basket{
-  idx = 0;
+  fid = 0;
   name = "";
-  detail = "";
-  img = "";
   price =0;
-  tid = 0;
   count = 0;
 }

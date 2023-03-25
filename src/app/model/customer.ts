@@ -7,6 +7,7 @@
 export interface Customer {
   cid:        number;
   name:       string;
+  money:      number;
   phone:      string;
   address:    string;
 }

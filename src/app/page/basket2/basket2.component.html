@@ -1,0 +1,57 @@
+<div class="container" style="margin-left:50px; font-family: 'Mitr', sans-serif;">
+  <div class="row" >
+    <div class="col-12">
+      <mat-card style="margin-top: 20px; background-color:rgb(249, 181, 55) ;">
+        <div class="row" style="margin-top: 5px;margin-bottom: 5px;">
+          <div class="col-1" style="text-align: center;">
+            <span >ลำดับ</span>
+          </div>
+          <div class="col-3"style="text-align: center;">
+            <span>ชื่ออาหาร</span>
+          </div>
+          <div class="col-2"style="text-align: center;">
+            <span>ราคา</span>
+          </div>
+          <div class="col-1"style="text-align: center;">
+            <span>จำนวน</span>
+          </div>
+          <div class="col-3"style="text-align: center;">
+            <span>แก้ไข</span>
+          </div>
+          <div class="col-1"style="text-align: center;">
+            <span>ราคา</span>
+          </div>
+        </div>
+      </mat-card>
+      <div >
+      <mat-card style="margin-top: 10px;" *ngFor="let foodOrder of this.foodOrders;let i = index">
+        <div class="row" style="margin-top: 10px;margin-bottom: 10px;">
+          <div class="col-1" style="text-align: center;">
+            <span>{{i+1}}</span>
+          </div>
+          <div class="col-3"style="text-align: center;">
+            <span>{{foodOrder.name}}</span>
+          </div>
+          <div class="col-2"style="text-align: center;">
+            <span>{{foodOrder.price}}</span>
+          </div>
+          <div class="col-1"style="text-align: center;">
+            <span>{{foodOrder.amount}}</span>
+          </div>
+          <div class="col-3"style="text-align: center;">
+            <span></span>
+          </div>
+          <div class="col-1" style="text-align: center;">
+            <span>{{foodOrder.sumPrice}}</span>
+          </div>
+          <div class="col-1"style="justify-content:center">
+            <button mat-button color="warn" style="margin-top: -5px;" (click)="del(foodOrder.oid, foodOrder.fid)">ลบ</button>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <span><button mat-button color="warn" routerLink="/main">กลับ</button></span>
+    <span style="float: right;">รวมทั้งหมด {{this.total}} บาท</span>
+
+
+

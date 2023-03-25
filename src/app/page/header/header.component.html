@@ -9,6 +9,6 @@
   <div class="font-menu">
     <button mat-button routerLink="/first">หน้าแรก</button>
     <button mat-button routerLink="/loginOwner">เจ้าของร้าน</button>
-    <button mat-button routerLink="/loginCus" >ลูกค้า</button>
+    <button mat-button routerLink="/loginCus" (click)="resetOid()">ลูกค้า</button>
   </div>
 </mat-toolbar>

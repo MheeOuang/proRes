@@ -7,6 +7,7 @@ import { LoginCusComponent } from './page/login-cus/login-cus.component';
 import { LoginOwnerComponent } from './page/login-owner/login-owner.component';
 import { FirstComponent } from './page/first/first.component';
 import { CreateUserComponent } from './page/create-user/create-user.component';
+import { Basket2Component } from './page/basket2/basket2.component';
 
 const routes: Routes = [
   {path:'',component:FirstComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:'createUser',component:CreateUserComponent},
   {path:'main',component:MainComponent},
   {path:'order',component:OrderComponent},
-  {path:'basket',component:BasketComponent}
+  {path:'basket',component:BasketComponent},
+  {path:'basket2',component:Basket2Component}
 ];
 
 @NgModule({

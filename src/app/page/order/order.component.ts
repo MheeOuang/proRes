@@ -33,5 +33,7 @@ export class OrderComponent {
         this.Total = this.Total +(this.foodOrders[i].amount * this.foodOrders[i].price);
       }
     });
+    console.log(this.foodOrders);
+
   }
 }

@@ -20,6 +20,7 @@ import { LoginCusComponent } from './page/login-cus/login-cus.component';
 import { LoginOwnerComponent } from './page/login-owner/login-owner.component';
 import { CreateUserComponent } from './page/create-user/create-user.component';
 import { FirstComponent } from './page/first/first.component';
+import { Basket2Component } from './page/basket2/basket2.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FirstComponent } from './page/first/first.component';
     LoginCusComponent,
     LoginOwnerComponent,
     CreateUserComponent,
-    FirstComponent
+    FirstComponent,
+    Basket2Component
   ],
   imports: [
     BrowserModule,
