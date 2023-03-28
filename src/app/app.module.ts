@@ -21,6 +21,7 @@ import { LoginOwnerComponent } from './page/login-owner/login-owner.component';
 import { CreateUserComponent } from './page/create-user/create-user.component';
 import { FirstComponent } from './page/first/first.component';
 import { Basket2Component } from './page/basket2/basket2.component';
+import { BillComponent } from './page/bill/bill.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { Basket2Component } from './page/basket2/basket2.component';
     LoginOwnerComponent,
     CreateUserComponent,
     FirstComponent,
-    Basket2Component
+    Basket2Component,
+    BillComponent
   ],
   imports: [
     BrowserModule,

@@ -30,8 +30,11 @@
           <div class="col-2">
             <button mat-raised-button (click)="show(this.order.oid)">ข้อมูล</button>
           </div>
-          <div class="col-3">
-            <button mat-raised-button>{{order.status}}</button>
+          <div class="col-3" *ngIf="order.status == 'กำลังจัดส่ง'">
+            <button mat-raised-button (click)="updateStatus(order.oid,order.status)">{{order.status}}</button>
+          </div>
+          <div class="col-3" *ngIf="order.status == 'จัดส่งสำเร็จ'">
+            <button mat-raised-button color="accent" (click)="updateStatus(order.oid,order.status)">{{order.status}}</button>
           </div>
         </div>
       </mat-card>
@@ -48,7 +51,10 @@
       </div>
       <div style="display: flex; flex-direction: column;margin-top: 10px">
         <span>
-          <h4 class="font-menu2">รายละเอียด</h4>
+          <h2 class="font-menu2">ออเดอร์: {{this.oid_perOrder}}</h2>
+        </span>
+        <span>
+          <h4 class="font-menu2">รายละเอียดรายการอาหาร</h4>
         </span>
 
         <div class="row" *ngFor="let foodOrder of this.foodOrders">
@@ -78,6 +84,26 @@
         </span>
       </div>
 
+      <div style="display: flex; flex-direction: column;margin-top: 10px" *ngFor="let order of this.finish_orders">
+        <span>
+          <h4 class="font-menu2">รายละเอียดลูกค้า</h4>
+        </span>
+        <span>
+          <p class="font-menu2">ชื่อ: {{order.cusName}}</p>
+        </span>
+        <span>
+          <p class="font-menu2">เบอร์โทรศัพท์: {{order.cusPhone}}</p>
+        </span>
+        <span>
+          <p class="font-menu2">ที่อยู่: {{order.address}}</p>
+        </span>
+        <span>
+          <p class="font-menu2">วันที่สั่งสินค้า: {{order.fdate}}</p>
+        </span>
+        <span>
+          <p class="font-menu2">วันที่จัดส่งสำเร็จ: {{order.odate}}</p>
+        </span>
+      </div>
     </div>
   </div>
 </div>

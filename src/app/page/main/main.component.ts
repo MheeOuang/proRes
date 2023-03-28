@@ -6,6 +6,7 @@ import { Convert as FoodCvk, Food } from 'src/app/model/food';
 import { CartService } from 'src/app/service/cart.service';
 import { Convert as CusBasketCvt, CusBasket} from 'src/app/model/cusBasket';
 import { Convert as ConsistofCvt, Consistof} from 'src/app/model/consistof';
+import { Convert as CustomerCvt , Customer} from 'src/app/model/customer';
 
 @Component({
   selector: 'app-main',
@@ -24,9 +25,15 @@ export class MainComponent {
   type = Array<any>();
   food: any;
   consistof = Array<Consistof>();
+  customer = Array<Customer>();
+  money : any;
+  cid = this.dataService.customer[0].cid;
 
   constructor(private cart: CartService, private dataService: DataService, private http: HttpClient) {
     this.showtype = "ทั้งหมด";
+    this.selectCustomerInfo(this.cid);
+
+
     this.http.get(dataService.apiEnpoint + '/food').subscribe((data: any) => {
       this.foods = FoodCvk.toFood(JSON.stringify(data));
     });
@@ -34,12 +41,7 @@ export class MainComponent {
       this.foodtypes = FoodtypeCvk.toFoodtype(JSON.stringify(data));
     });
   }
-  ngOnInit(): void {
-    this.cart.getFoods()
-      .subscribe(res => {
-        this.totalItem = res.length;
-      })
-  }
+
   show(Id: any) {
     for (let index = 0; index < this.foods.length; index++) {
       if (this.foods[index].fid == Id) {
@@ -92,18 +94,22 @@ export class MainComponent {
           { observe: 'response' }).subscribe((response) => {});
         }
       });
-
-
-
-
-
-
-
-
     }
-
   }
 
+  plusMoney(cid : any){
+    this.http.get(this.dataService.apiEnpoint + "/customer/update/moneyPlus/"+cid,
+    { observe: 'response' }).subscribe((response) => {});
+    this.selectCustomerInfo(this.cid);
+  }
+
+  selectCustomerInfo(cid : any){
+    this.http.get(this.dataService.apiEnpoint + '/customer/select/' + cid).subscribe((data: any) => {
+      this.customer = CustomerCvt.toCustomer(JSON.stringify(data))
+      this.dataService.customer = this.customer;
+      this.money = this.customer[0].money;
+    });
+  }
 }
 
 

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +9,13 @@ export class DataService {
   basket = new basket;
   customer : any;
   oid : any;
+  oid_bill : any;
   CusBasket : any;
-  constructor() { }
+  constructor(private router : Router) {
+    if(this.customer == null || this.oid == null){
+      this.router.navigateByUrl('/first');
+    }
+  }
 }
 class basket{
   fid = 0;

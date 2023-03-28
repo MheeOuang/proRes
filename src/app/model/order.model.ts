@@ -1,8 +1,12 @@
 export interface Order {
   oid:  number;
+  cid:  number;
   cusName:  string;
+  cusPhone: string;
   status:   string;
   address:  string;
+  fdate:    string;
+  odate:    string;
 }
 
 // Converts JSON strings to/from your types
